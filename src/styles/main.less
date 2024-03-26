@@ -1,0 +1,85 @@
+@import "mapas.less";
+
+@brakpointMobile: ~"(max-width: 767px)";
+@brakpointTablet: ~"(max-width: 1023px)";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Roboto, sans-serif;
+}
+
+body {
+    background-color: #colors[backgroundColor];
+    color: #colors[textColor];
+}
+
+.container {
+    max-width: 960px;
+    width: 100%;
+    margin: 0 auto;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    @media @brakpointTablet {
+        max-width: 80%;
+    }
+
+    @media @brakpointMobile {
+        max-width: 70%;
+    }
+}
+
+header {
+    padding-bottom: 24px;
+
+    .profile-avatar {
+        width: 200px;
+        display: block;
+        margin: 0 auto 24px;
+        border-radius: 50%;
+    }
+}
+
+.profile-bio {
+    text-align: center;
+    &-name {
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
+
+    &-subtitle {
+        font-size: 14px;
+        margin-bottom: 8px;
+    }
+}
+
+.links-list {
+    max-width: 720px;
+    width: 100%;
+    margin: 0 auto;
+    &-item {
+        list-style: none;
+        a {
+            text-decoration: none;
+            color: #colors[textColor];
+            background-color: #colors[buttonColor];
+            display: block;
+            padding: 16px 20px;
+            margin-bottom: 16px;
+            text-align: center;
+            font-weight: bold;
+            border: 2px solid #colors[buttonColor];
+            border-radius: 30px;
+            transition: all ease .5s;
+
+            &:hover {
+                background-color: transparent;
+            }
+        }
+    }
+
+}
